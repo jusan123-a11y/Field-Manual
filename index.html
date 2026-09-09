@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Field Manual — Practical IT Guides for People Who Have to Figure It Out</title>
+  <meta name="description" content="Step-by-step field manuals for small business owners, IT support technicians, office administrators, security installers, and students.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Main Navigation Bar -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <div class="nav-left">
+        <a href="#" class="brand-logo" aria-label="Field Manual Home">
+          <div class="logo-mark">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="4" y="3" width="16" height="18" rx="2" ry="2"/>
+              <line x1="8" y1="7" x2="16" y2="7"/>
+              <line x1="8" y1="11" x2="14" y2="11"/>
+              <line x1="8" y1="15" x2="12" y2="15"/>
+              <path d="M16 14l2 2 3-3" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <span class="brand-name">FIELD MANUAL</span>
+        </a>
+      </div>
+
+      <nav class="nav-center" id="navCenter">
+        <ul class="nav-links">
+          <li class="nav-item has-dropdown">
+            <button class="nav-link dropdown-toggle" aria-expanded="false">
+              Guides
+              <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1L5 5L9 1"/></svg>
+            </button>
+            <div class="dropdown-menu">
+              <a href="#library" class="dropdown-item" data-nav-filter="all">
+                <strong>All Field Manuals</strong>
+                <span>Browse our full library of 7 practical manuals</span>
+              </a>
+              <a href="#library" class="dropdown-item" data-nav-filter="starter">
+                <strong>Starter Series</strong>
+                <span>Fundamentals for beginners and non-IT staff</span>
+              </a>
+              <a href="#library" class="dropdown-item" data-nav-filter="practical">
+                <strong>Practical Series</strong>
+                <span>Hands-on step-by-step diagnostic playbooks</span>
+              </a>
+              <a href="#library" class="dropdown-item" data-nav-filter="field">
+                <strong>Field Technician Series</strong>
+                <span>On-site installation and hardware diagnostics</span>
+              </a>
+            </div>
+          </li>
+
+          <li class="nav-item has-dropdown">
+            <button class="nav-link dropdown-toggle" aria-expanded="false">
+              By Role
+              <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1L5 5L9 1"/></svg>
+            </button>
+            <div class="dropdown-menu">
+              <a href="#who-is-this-for" class="dropdown-item" data-nav-role="small-business">
+                <strong>Small Business Owners</strong>
+                <span>Solve issues without high hourly consulting rates</span>
+              </a>
+              <a href="#who-is-this-for" class="dropdown-item" data-nav-role="junior-it">
+                <strong>Junior IT Support</strong>
+                <span>L1/L2 desk support protocols and speed fixes</span>
+              </a>
+              <a href="#who-is-this-for" class="dropdown-item" data-nav-role="office-admin">
+                <strong>Office Administrators</strong>
+                <span>Keep the team productive and systems running</span>
+              </a>
+              <a href="#who-is-this-for" class="dropdown-item" data-nav-role="security-installer">
+                <strong>Security-System Installers</strong>
+                <span>CCTV, NVR, PoE, and IP cameras</span>
+              </a>
+              <a href="#who-is-this-for" class="dropdown-item" data-nav-role="it-students">
+                <strong>IT Students</strong>
+                <span>Real-world practical workflows not taught in theory</span>
+              </a>
+              <a href="#who-is-this-for" class="dropdown-item" data-nav-role="school-tech">
+                <strong>School & Office Technicians</strong>
+                <span>Fleet management and workstation triage</span>
+              </a>
+            </div>
+          </li>
+
+          <li class="nav-item has-dropdown">
+            <button class="nav-link dropdown-toggle" aria-expanded="false">
+              By Problem
+              <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1L5 5L9 1"/></svg>
+            </button>
+            <div class="dropdown-menu">
+              <a href="#problems" class="dropdown-item" data-nav-problem="wifi">
+                <strong>Wi-Fi & Internet</strong>
+                <span>Dropouts, DNS fails, gateway errors, slow speeds</span>
+              </a>
+              <a href="#problems" class="dropdown-item" data-nav-problem="printers">
+                <strong>Printers</strong>
+                <span>Offline status, spooler hangs, network queues</span>
+              </a>
+              <a href="#problems" class="dropdown-item" data-nav-problem="computers">
+                <strong>Computers & OS</strong>
+                <span>Freezing, bootloops, updates, performance tuning</span>
+              </a>
+              <a href="#problems" class="dropdown-item" data-nav-problem="networks">
+                <strong>Networks & Routers</strong>
+                <span>IP conflicts, VLANs, subnet masks, switch ports</span>
+              </a>
+              <a href="#problems" class="dropdown-item" data-nav-problem="cameras">
+                <strong>Security Cameras</strong>
+                <span>RTSP streams, PoE limits, ONVIF discovery</span>
+              </a>
+              <a href="#problems" class="dropdown-item" data-nav-problem="cybersecurity">
+                <strong>Cybersecurity</strong>
+                <span>Ransomware safety, MFA, backups, credential leaks</span>
+              </a>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a href="#free-resources" class="nav-link" id="navFreeResources">Free Resources</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#about" class="nav-link" id="navAbout">About</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="nav-right">
+        <!-- Search Trigger -->
+        <button class="icon-btn search-trigger" id="searchTrigger" title="Search guides (Press /)" aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="7"/>
+            <line x1="16.5" y1="16.5" x2="21" y2="21"/>
+          </svg>
+        </button>
+
+        <!-- Cart Button -->
+        <button class="cart-btn" id="cartTrigger" aria-label="Shopping Cart">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-label">CART</span>
+          <span class="cart-count-badge" id="cartCount">0</span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <div class="logo-mark small">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="4" y="3" width="16" height="18" rx="2" ry="2"/>
+            <line x1="8" y1="7" x2="16" y2="7"/>
+            <line x1="8" y1="11" x2="14" y2="11"/>
+          </svg>
+        </div>
+        <span class="brand-name">FIELD MANUAL</span>
+      </div>
+      <button class="drawer-close" id="mobileDrawerClose" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="mobile-drawer-body">
+      <div class="mobile-nav-group">
+        <span class="mobile-group-title">Browse</span>
+        <a href="#library" class="mobile-link" data-mobile-nav>All Guides</a>
+        <a href="#who-is-this-for" class="mobile-link" data-mobile-nav>By Role</a>
+        <a href="#problems" class="mobile-link" data-mobile-nav>By Problem</a>
+        <a href="#featured" class="mobile-link" data-mobile-nav>Featured Manual</a>
+        <a href="#free-resources" class="mobile-link" data-mobile-nav>Free Resources</a>
+        <a href="#about" class="mobile-link" data-mobile-nav>About Field Manual</a>
+      </div>
+      <div class="mobile-cta-group">
+        <button class="btn btn-primary btn-block" id="mobileFindGuide">Take 3-Question Quiz</button>
+      </div>
+    </div>
+  </div>
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="hero-kicker">PRACTICAL IT GUIDES</div>
+        <h1 class="hero-title">For people who have to figure it out.</h1>
+        <p class="hero-description">
+          Step-by-step field manuals for small business owners, IT support technicians, office administrators, security installers, students and school or office technicians.
+        </p>
+        <div class="hero-actions">
+          <a href="#library" class="btn btn-primary">
+            <span>EXPLORE GUIDES</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#library" class="btn btn-outline" id="heroStartBasics" data-filter="starter">
+            <span>START WITH THE BASICS</span>
+          </a>
+        </div>
+        <p class="hero-tagline">
+          No IT department? No problem. Find the guide, follow the steps, solve the problem.
+        </p>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-image-wrapper">
+          <img src="assets/images/hero-desk.png" alt="Field Manual physical edition on a wooden desk with pen and coffee" class="hero-image">
+          <div class="hero-methodology-overlay">
+            <span class="step-label">CHECK</span>
+            <span class="step-arrow">&rarr;</span>
+            <span class="step-label">SOLVE</span>
+            <span class="step-arrow">&rarr;</span>
+            <span class="step-label">KEEP GOING</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IS THIS FOR? Section -->
+  <section class="roles-section" id="who-is-this-for">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">WHO IS THIS FOR?</h2>
+        <a href="#library" class="section-link" id="filterRoleAll">
+          Find the right guide for your role &rarr;
+        </a>
+      </div>
+
+      <div class="roles-grid">
+        <!-- Card 1: Small Business Owners -->
+        <article class="role-card" data-role-filter="small-business">
+          <div class="role-image-box">
+            <img src="assets/images/role-small-business.png" alt="Small Business Owner working on laptop" class="role-img" loading="lazy">
+          </div>
+          <div class="role-content">
+            <div class="role-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="4" y="2" width="16" height="20" rx="1"/>
+                <line x1="9" y1="6" x2="9" y2="6.01"/>
+                <line x1="15" y1="6" x2="15" y2="6.01"/>
+                <line x1="9" y1="10" x2="9" y2="10.01"/>
+                <line x1="15" y1="10" x2="15" y2="10.01"/>
+                <line x1="9" y1="14" x2="9" y2="14.01"/>
+                <line x1="15" y1="14" x2="15" y2="14.01"/>
+                <path d="M9 22v-4h6v4"/>
+              </svg>
+            </div>
+            <h3 class="role-title">Small Business Owners</h3>
+            <p class="role-desc">IT help without hiring an IT department.</p>
+            <button class="role-link-btn" data-role="small-business">
+              Explore &rarr;
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 2: Junior IT Support -->
+        <article class="role-card" data-role-filter="junior-it">
+          <div class="role-image-box">
+            <img src="assets/images/role-junior-it.png" alt="Junior IT technician troubleshooting hardware" class="role-img" loading="lazy">
+          </div>
+          <div class="role-content">
+            <div class="role-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+              </svg>
+            </div>
+            <h3 class="role-title">Junior IT Support</h3>
+            <p class="role-desc">Practical knowledge for the help desk.</p>
+            <button class="role-link-btn" data-role="junior-it">
+              Explore &rarr;
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 3: Office Administrators -->
+        <article class="role-card" data-role-filter="office-admin">
+          <div class="role-image-box">
+            <img src="assets/images/role-office-admin.png" alt="Office Administrator working at desk" class="role-img" loading="lazy">
+          </div>
+          <div class="role-content">
+            <div class="role-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <polyline points="10 9 9 9 8 9"/>
+              </svg>
+            </div>
+            <h3 class="role-title">Office Administrators</h3>
+            <p class="role-desc">Keep the office running.</p>
+            <button class="role-link-btn" data-role="office-admin">
+              Explore &rarr;
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 4: Security-System Installers -->
+        <article class="role-card" data-role-filter="security-installer">
+          <div class="role-image-box">
+            <img src="assets/images/role-security-installer.png" alt="Technician installing surveillance camera" class="role-img" loading="lazy">
+          </div>
+          <div class="role-content">
+            <div class="role-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                <circle cx="12" cy="13" r="4"/>
+              </svg>
+            </div>
+            <h3 class="role-title">Security-System Installers</h3>
+            <p class="role-desc">Install. Configure. Troubleshoot.</p>
+            <button class="role-link-btn" data-role="security-installer">
+              Explore &rarr;
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 5: IT Students -->
+        <article class="role-card" data-role-filter="it-students">
+          <div class="role-image-box">
+            <img src="assets/images/role-it-student.png" alt="IT student studying" class="role-img" loading="lazy">
+          </div>
+          <div class="role-content">
+            <div class="role-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              </svg>
+            </div>
+            <h3 class="role-title">IT Students</h3>
+            <p class="role-desc">Turn theory into practical skills.</p>
+            <button class="role-link-btn" data-role="it-students">
+              Explore &rarr;
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 6: School & Office Technicians -->
+        <article class="role-card" data-role-filter="school-tech">
+          <div class="role-image-box">
+            <img src="assets/images/role-school-tech.png" alt="Technician troubleshooting devices" class="role-img" loading="lazy">
+          </div>
+          <div class="role-content">
+            <div class="role-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+            </div>
+            <h3 class="role-title">School & Office Technicians</h3>
+            <p class="role-desc">Solve problems faster.</p>
+            <button class="role-link-btn" data-role="school-tech">
+              Explore &rarr;
+            </button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GOT A PROBLEM? START HERE. Section -->
+  <section class="problems-section" id="problems">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">GOT A PROBLEM? START HERE.</h2>
+        <a href="#library" class="section-link" id="browseAllProblems">
+          Browse all problems &rarr;
+        </a>
+      </div>
+
+      <div class="problems-row">
+        <!-- Problem 1 -->
+        <button class="problem-col" data-problem-tag="wifi">
+          <div class="problem-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M5 12.55a11 11 0 0 1 14.08 0"/>
+              <path d="M1.42 9a16 16 0 0 1 21.16 0"/>
+              <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
+              <line x1="12" y1="20" x2="12.01" y2="20" stroke-width="2.5"/>
+            </svg>
+          </div>
+          <h3 class="problem-title">Wi-Fi & Internet</h3>
+          <p class="problem-desc">No internet? No problem.</p>
+        </button>
+
+        <!-- Problem 2 -->
+        <button class="problem-col" data-problem-tag="printers">
+          <div class="problem-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <polyline points="6 9 6 2 18 2 18 9"/>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+              <rect x="6" y="14" width="12" height="8"/>
+            </svg>
+          </div>
+          <h3 class="problem-title">Printers</h3>
+          <p class="problem-desc">Get it printing again.</p>
+        </button>
+
+        <!-- Problem 3 -->
+        <button class="problem-col" data-problem-tag="computers">
+          <div class="problem-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
+          <h3 class="problem-title">Computers</h3>
+          <p class="problem-desc">Slow, frozen, or not working?</p>
+        </button>
+
+        <!-- Problem 4 -->
+        <button class="problem-col" data-problem-tag="networks">
+          <div class="problem-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <circle cx="12" cy="5" r="3"/>
+              <line x1="12" y1="8" x2="12" y2="14"/>
+              <circle cx="5" cy="19" r="3"/>
+              <circle cx="19" cy="19" r="3"/>
+              <line x1="5" y1="16" x2="12" y2="14"/>
+              <line x1="19" y1="16" x2="12" y2="14"/>
+            </svg>
+          </div>
+          <h3 class="problem-title">Networks</h3>
+          <p class="problem-desc">Find and fix the issue.</p>
+        </button>
+
+        <!-- Problem 5 -->
+        <button class="problem-col" data-problem-tag="cameras">
+          <div class="problem-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <rect x="3" y="11" width="18" height="10" rx="2"/>
+              <circle cx="12" cy="16" r="2.5"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+          </div>
+          <h3 class="problem-title">Security Cameras</h3>
+          <p class="problem-desc">Get your cameras online.</p>
+        </button>
+
+        <!-- Problem 6 -->
+        <button class="problem-col" data-problem-tag="cybersecurity">
+          <div class="problem-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <h3 class="problem-title">Cybersecurity</h3>
+          <p class="problem-desc">Keep your data safe.</p>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED FIELD MANUAL Section -->
+  <section class="featured-section" id="featured">
+    <div class="container">
+      <div class="featured-card">
+        <!-- 3D Book Visual -->
+        <div class="featured-book-wrapper">
+          <div class="book-3d" id="featuredBook3D">
+            <img src="assets/images/featured-book.png" alt="Small Office IT Survival Guide Field Manual #01" class="book-cover-img">
+            <div class="book-spine-shadow"></div>
+          </div>
+          <button class="preview-btn" id="lookInsideFeatured" data-preview="fm-01">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+            <span>LOOK INSIDE &rarr;</span>
+          </button>
+        </div>
+
+        <!-- Book Info & Specs -->
+        <div class="featured-content">
+          <span class="kicker-badge">FEATURED FIELD MANUAL</span>
+          <h2 class="featured-title">Small Office IT Survival Guide</h2>
+          <p class="featured-summary">
+            25 practical fixes every small business should know before calling an IT professional.
+          </p>
+
+          <div class="specs-grid">
+            <div class="spec-item">
+              <div class="spec-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>
+              </div>
+              <div class="spec-meta">
+                <span class="spec-label">Level</span>
+                <span class="spec-value">Beginner</span>
+              </div>
+            </div>
+
+            <div class="spec-item">
+              <div class="spec-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              </div>
+              <div class="spec-meta">
+                <span class="spec-label">Pages</span>
+                <span class="spec-value">82</span>
+              </div>
+            </div>
+
+            <div class="spec-item">
+              <div class="spec-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+              </div>
+              <div class="spec-meta">
+                <span class="spec-label">Format</span>
+                <span class="spec-value">PDF + EPUB</span>
+              </div>
+            </div>
+
+            <div class="spec-item">
+              <div class="spec-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div class="spec-meta">
+                <span class="spec-label">Updated</span>
+                <span class="spec-value">2026</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="featured-pricing-row">
+            <div class="price-tag">$19</div>
+            <button class="btn btn-primary btn-add-featured" data-add-to-cart="fm-01">
+              <span>GET THE GUIDE</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Includes Checklist Column -->
+        <div class="featured-includes">
+          <h3 class="includes-title">INCLUDES:</h3>
+          <ul class="includes-list">
+            <li>
+              <span class="check-icon">&check;</span>
+              <span>Wi-Fi troubleshooting</span>
+            </li>
+            <li>
+              <span class="check-icon">&check;</span>
+              <span>Printer problems</span>
+            </li>
+            <li>
+              <span class="check-icon">&check;</span>
+              <span>Slow computers</span>
+            </li>
+            <li>
+              <span class="check-icon">&check;</span>
+              <span>Password issues</span>
+            </li>
+            <li>
+              <span class="check-icon">&check;</span>
+              <span>Network troubleshooting</span>
+            </li>
+            <li>
+              <span class="check-icon">&check;</span>
+              <span>File sharing</span>
+            </li>
+            <li>
+              <span class="check-icon">&check;</span>
+              <span>Backups</span>
+            </li>
+            <li>
+              <span class="check-icon">&check;</span>
+              <span>Basic cybersecurity</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE FIELD MANUAL LIBRARY Section -->
+  <section class="library-section" id="library">
+    <div class="container">
+      <div class="library-header-row">
+        <div class="library-heading-wrap">
+          <h2 class="section-title">THE FIELD MANUAL LIBRARY</h2>
+          <div class="library-filter-tags" id="libraryFilters">
+            <button class="filter-tab active" data-filter="all">All</button>
+            <button class="filter-tab" data-filter="practical">Practical</button>
+            <button class="filter-tab" data-filter="field">Field</button>
+            <button class="filter-tab" data-filter="starter">Starter</button>
+          </div>
+        </div>
+        <button class="section-link reset-link-btn" id="resetFiltersLink">
+          View all guides &rarr;
+        </button>
+      </div>
+
+      <!-- Active Filter Banner (when filtered by role or problem) -->
+      <div class="active-filter-indicator" id="filterIndicator" style="display: none;">
+        <span>Showing guides for: <strong id="filterName"></strong></span>
+        <button class="clear-filter-btn" id="clearFilterBtn">&times; Clear filter</button>
+      </div>
+
+      <!-- Book Grid -->
+      <div class="library-grid" id="libraryGrid">
+
+        <!-- Guide 1: Network Troubleshooting -->
+        <article class="book-card" data-category="practical" data-role="junior-it,small-business,school-tech" data-problem="wifi,networks" data-id="fm-02">
+          <div class="book-card-cover">
+            <img src="assets/images/guide-network.png" alt="Network Troubleshooting cover" class="book-cover-img-small" loading="lazy">
+            <button class="book-hover-action" data-preview="fm-02" title="Preview Guide">Quick View</button>
+          </div>
+          <div class="book-card-body">
+            <h3 class="book-card-title">Network Troubleshooting</h3>
+            <div class="book-card-footer">
+              <span class="book-price">$19</span>
+              <span class="pill-badge pill-practical">PRACTICAL</span>
+            </div>
+            <button class="btn btn-secondary-sm btn-block add-cart-sm" data-add-to-cart="fm-02">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Guide 2: IP Camera Installation Guide -->
+        <article class="book-card" data-category="field" data-role="security-installer,junior-it" data-problem="cameras,networks" data-id="fm-03">
+          <div class="book-card-cover">
+            <img src="assets/images/guide-ip-camera.png" alt="IP Camera Installation Guide cover" class="book-cover-img-small" loading="lazy">
+            <button class="book-hover-action" data-preview="fm-03" title="Preview Guide">Quick View</button>
+          </div>
+          <div class="book-card-body">
+            <h3 class="book-card-title">IP Camera Installation Guide</h3>
+            <div class="book-card-footer">
+              <span class="book-price">$24</span>
+              <span class="pill-badge pill-field">FIELD</span>
+            </div>
+            <button class="btn btn-secondary-sm btn-block add-cart-sm" data-add-to-cart="fm-03">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Guide 3: Windows 11 for IT Support -->
+        <article class="book-card" data-category="practical" data-role="junior-it,office-admin,it-students,school-tech" data-problem="computers" data-id="fm-04">
+          <div class="book-card-cover">
+            <img src="assets/images/guide-windows11.png" alt="Windows 11 for IT Support cover" class="book-cover-img-small" loading="lazy">
+            <button class="book-hover-action" data-preview="fm-04" title="Preview Guide">Quick View</button>
+          </div>
+          <div class="book-card-body">
+            <h3 class="book-card-title">Windows 11 for IT Support</h3>
+            <div class="book-card-footer">
+              <span class="book-price">$18</span>
+              <span class="pill-badge pill-practical">PRACTICAL</span>
+            </div>
+            <button class="btn btn-secondary-sm btn-block add-cart-sm" data-add-to-cart="fm-04">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Guide 4: Printer Troubleshooting -->
+        <article class="book-card" data-category="starter" data-role="office-admin,small-business,school-tech" data-problem="printers" data-id="fm-05">
+          <div class="book-card-cover">
+            <img src="assets/images/guide-printer.png" alt="Printer Troubleshooting cover" class="book-cover-img-small" loading="lazy">
+            <button class="book-hover-action" data-preview="fm-05" title="Preview Guide">Quick View</button>
+          </div>
+          <div class="book-card-body">
+            <h3 class="book-card-title">Printer Troubleshooting</h3>
+            <div class="book-card-footer">
+              <span class="book-price">$16</span>
+              <span class="pill-badge pill-starter">STARTER</span>
+            </div>
+            <button class="btn btn-secondary-sm btn-block add-cart-sm" data-add-to-cart="fm-05">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Guide 5: IT Support Technician Starter -->
+        <article class="book-card" data-category="starter" data-role="junior-it,it-students,school-tech" data-problem="computers,networks" data-id="fm-06">
+          <div class="book-card-cover">
+            <img src="assets/images/guide-it-starter.png" alt="IT Support Technician Starter cover" class="book-cover-img-small" loading="lazy">
+            <button class="book-hover-action" data-preview="fm-06" title="Preview Guide">Quick View</button>
+          </div>
+          <div class="book-card-body">
+            <h3 class="book-card-title">IT Support Technician Starter</h3>
+            <div class="book-card-footer">
+              <span class="book-price">$22</span>
+              <span class="pill-badge pill-starter">STARTER</span>
+            </div>
+            <button class="btn btn-secondary-sm btn-block add-cart-sm" data-add-to-cart="fm-06">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Guide 6: Cybersecurity Basics -->
+        <article class="book-card" data-category="practical" data-role="small-business,office-admin,it-students" data-problem="cybersecurity" data-id="fm-07">
+          <div class="book-card-cover">
+            <img src="assets/images/guide-cybersecurity.png" alt="Cybersecurity Basics cover" class="book-cover-img-small" loading="lazy">
+            <button class="book-hover-action" data-preview="fm-07" title="Preview Guide">Quick View</button>
+          </div>
+          <div class="book-card-body">
+            <h3 class="book-card-title">Cybersecurity Basics</h3>
+            <div class="book-card-footer">
+              <span class="book-price">$20</span>
+              <span class="pill-badge pill-practical">PRACTICAL</span>
+            </div>
+            <button class="btn btn-secondary-sm btn-block add-cart-sm" data-add-to-cart="fm-07">Add to Cart</button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM 3 ACTION CARDS -->
+  <section class="action-cards-section" id="resources">
+    <div class="container">
+      <div class="action-grid">
+
+        <!-- Action Card 1: Build Your IT Toolkit -->
+        <div class="action-card promo-card-beige">
+          <div class="action-card-header">
+            <div class="action-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+                <line x1="12" y1="12" x2="12" y2="12.01"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="action-title">BUILD YOUR IT TOOLKIT</h3>
+              <p class="action-subtitle">Bundles &bull; Checklists &bull; Quick References</p>
+            </div>
+          </div>
+          <button class="btn btn-outline-sm" id="btnViewBundles">
+            <span>VIEW BUNDLES</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+
+        <!-- Action Card 2: Free Field Notes -->
+        <div class="action-card promo-card-beige" id="free-resources">
+          <div class="action-card-header">
+            <div class="action-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="action-title">FREE FIELD NOTES</h3>
+              <p class="action-subtitle">Practical IT tips, checklists and quick references.</p>
+            </div>
+          </div>
+          <button class="btn btn-outline-sm" id="btnFreeNotes">
+            <span>EXPLORE FREE RESOURCES</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+
+        <!-- Action Card 3: Diagnostic Quiz (Dark Card) -->
+        <div class="action-card promo-card-dark">
+          <div class="action-card-header">
+            <div class="action-icon-dark">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="12" r="10"/>
+                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="action-title-light">Not sure which guide you need?</h3>
+              <p class="action-subtitle-light">Take our 3-question quiz and get a personalized recommendation.</p>
+            </div>
+          </div>
+          <button class="btn btn-outline-light-sm" id="btnStartQuiz">
+            <span>FIND MY GUIDE</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="container about-container">
+      <div class="about-intro">
+        <span class="kicker-badge">PHILOSOPHY & ETHOS</span>
+        <h2 class="about-title">Why Field Manual Exists</h2>
+        <p class="about-lead">
+          Technology isn't complicated because people are careless. It's complicated because consumer equipment is packaged with enterprise complexity, and small businesses are left in the middle.
+        </p>
+      </div>
+      <div class="about-grid">
+        <div class="about-pillar">
+          <div class="pillar-num">01</div>
+          <h3 class="pillar-title">Checklists Over Theory</h3>
+          <p>You don't need a 400-page computer science dissertation when the office printer is down right before a client presentation. You need the exact 5 commands to verify network routing.</p>
+        </div>
+        <div class="about-pillar">
+          <div class="pillar-num">02</div>
+          <h3 class="pillar-title">Battle-Tested Workflows</h3>
+          <p>Written by field engineers with 15+ years diagnosing live systems under pressure. Every procedure has been verified on real hardware in real small-office environments.</p>
+        </div>
+        <div class="about-pillar">
+          <div class="pillar-num">03</div>
+          <h3 class="pillar-title">Immediate Digital Access</h3>
+          <p>Delivered instantly in searchable PDF and reflowable EPUB formats. Keep a copy on your phone, iPad, or local NAS so you can access it even when the Internet is disconnected.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <a href="#" class="brand-logo" aria-label="Field Manual">
+          <div class="logo-mark small">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="4" y="3" width="16" height="18" rx="2" ry="2"/>
+              <line x1="8" y1="7" x2="16" y2="7"/>
+              <line x1="8" y1="11" x2="14" y2="11"/>
+              <line x1="8" y1="15" x2="12" y2="15"/>
+            </svg>
+          </div>
+          <span class="brand-name">FIELD MANUAL</span>
+        </a>
+        <p class="footer-motto">Know what to check. Know what to do.</p>
+      </div>
+
+      <div class="footer-nav">
+        <a href="#library" data-footer-filter="all">Guides</a>
+        <a href="#who-is-this-for">By Role</a>
+        <a href="#problems">By Problem</a>
+        <a href="#free-resources">Free Resources</a>
+        <a href="#about">About</a>
+      </div>
+
+      <div class="footer-social">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="social-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#F8F6F0"/></svg>
+        </a>
+        <a href="mailto:support@fieldmanual.it" aria-label="Email" class="social-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Field Manual IT Publishing. All rights reserved. Precision guides for people on the ground.</p>
+    </div>
+  </footer>
+
+  <!-- ==================== MODALS & DRAWERS ==================== -->
+
+  <!-- Slide-out Shopping Cart Drawer -->
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-drawer-header">
+      <div class="cart-header-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        <h3>YOUR CART</h3>
+        <span class="cart-item-count-text" id="cartDrawerCount">(0 items)</span>
+      </div>
+      <button class="drawer-close" id="cartDrawerClose" aria-label="Close cart">&times;</button>
+    </div>
+
+    <div class="cart-drawer-body" id="cartDrawerBody">
+      <!-- Empty State -->
+      <div class="cart-empty" id="cartEmptyState">
+        <div class="cart-empty-icon">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+        </div>
+        <h4>Your cart is empty</h4>
+        <p>Explore our library of field manuals to solve your office IT challenges.</p>
+        <button class="btn btn-outline-sm" id="cartBrowseBtn">Explore Guides</button>
+      </div>
+
+      <!-- Items List -->
+      <div class="cart-items-list" id="cartItemsList"></div>
+    </div>
+
+    <div class="cart-drawer-footer" id="cartDrawerFooter">
+      <div class="cart-discount-bar">
+        <input type="text" id="promoInput" placeholder="Promo code (try FIELD10)" class="promo-input">
+        <button class="btn-promo" id="applyPromoBtn">Apply</button>
+      </div>
+      <div class="cart-summary-line">
+        <span>Delivery</span>
+        <span class="text-success">Instant Digital Download</span>
+      </div>
+      <div class="cart-summary-line subtotal-line">
+        <span>Subtotal</span>
+        <span class="cart-subtotal" id="cartSubtotal">$0.00</span>
+      </div>
+      <button class="btn btn-primary btn-block btn-checkout" id="checkoutBtn">
+        <span>PROCEED TO CHECKOUT</span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+      <p class="checkout-guarantee">🔒 Instant PDF + EPUB download. DRM-free. 30-day money-back guarantee.</p>
+    </div>
+  </aside>
+
+  <!-- Look Inside / Quick Preview Modal -->
+  <div class="modal-overlay" id="previewModal" aria-hidden="true">
+    <div class="modal-dialog modal-large">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="kicker-badge" id="previewBadge">MANUAL PREVIEW</span>
+          <h3 class="modal-title" id="previewTitle">Small Office IT Survival Guide</h3>
+        </div>
+        <button class="modal-close" id="previewClose" aria-label="Close preview">&times;</button>
+      </div>
+      <div class="modal-body preview-modal-body">
+        <div class="preview-layout">
+          <div class="preview-left">
+            <img src="assets/images/featured-book.png" alt="Preview Book" id="previewBookImg" class="preview-cover-large">
+            <div class="preview-meta-box">
+              <div class="preview-meta-row"><span>Pages:</span><strong id="previewPages">82 pages</strong></div>
+              <div class="preview-meta-row"><span>Formats:</span><strong>PDF, EPUB, MOBI</strong></div>
+              <div class="preview-meta-row"><span>Published:</span><strong>2026 Edition</strong></div>
+              <div class="preview-meta-row"><span>Price:</span><strong class="text-price" id="previewPrice">$19</strong></div>
+            </div>
+            <button class="btn btn-primary btn-block" id="previewAddToCartBtn">Add to Cart</button>
+          </div>
+          <div class="preview-right">
+            <div class="preview-tabs">
+              <button class="preview-tab active" data-tab="toc">Table of Contents</button>
+              <button class="preview-tab" data-tab="sample">Sample Chapter</button>
+              <button class="preview-tab" data-tab="checklist">Field Checklist</button>
+            </div>
+            <div class="preview-tab-content active" id="tabContentTOC">
+              <ol class="toc-list" id="previewTOCList">
+                <li><strong>Chapter 1: The First 5 Minutes</strong> — Why rebooting blindly loses diagnostic data</li>
+                <li><strong>Chapter 2: The Physical Layer</strong> — Cables, RJ-45 pins, PoE injectors, and link lights</li>
+                <li><strong>Chapter 3: Gateway & DNS Triage</strong> — Step-by-step diagnostic tree for internet loss</li>
+                <li><strong>Chapter 4: Windows Network Stack Reset</strong> — Clean flushing without corrupting profiles</li>
+                <li><strong>Chapter 5: Printer Spooler & Network Queue Resets</strong> — Permanent fixes for phantom queues</li>
+                <li><strong>Chapter 6: IP Subnetting & Collisions</strong> — Resolving rogue DHCP servers and camera overlaps</li>
+                <li><strong>Chapter 7: Backups That Actually Restore</strong> — The 3-2-1 rule without enterprise software</li>
+                <li><strong>Chapter 8: Ransomware Containment Checklist</strong> — What to disconnect in the first 60 seconds</li>
+              </ol>
+            </div>
+            <div class="preview-tab-content" id="tabContentSample">
+              <div class="sample-excerpt">
+                <span class="sample-chapter-title">Chapter 3: The 4-Step Internet Diagnostic Tree</span>
+                <p>When an office worker shouts "the internet is down," never touch the router first. Follow the ladder:</p>
+                <div class="sample-callout">
+                  <strong>Step 1: Ping the Loopback Address</strong><br>
+                  <code>ping 127.0.0.1</code><br>
+                  <small>If this fails, the local TCP/IP stack is damaged. No router reboot will fix this.</small>
+                </div>
+                <div class="sample-callout">
+                  <strong>Step 2: Ping the Default Gateway</strong><br>
+                  <code>ping 192.168.1.1</code> (or your gateway IP from <code>ipconfig</code>)<br>
+                  <small>If this responds with 0% packet loss, the physical and Wi-Fi link to your router is 100% operational.</small>
+                </div>
+                <div class="sample-callout">
+                  <strong>Step 3: Ping Public DNS by IP</strong><br>
+                  <code>ping 1.1.1.1</code><br>
+                  <small>If this works but websites don't load, you have a pure DNS lookup failure, not an internet outage.</small>
+                </div>
+              </div>
+            </div>
+            <div class="preview-tab-content" id="tabContentChecklist">
+              <div class="checklist-preview-box">
+                <h4>Emergency Response Quickcard</h4>
+                <ul>
+                  <li>&check; Check physical link lights: Amber = 100Mbps, Green = 1Gbps.</li>
+                  <li>&check; Verify IP assignment: If address starts with 169.254.x.x, DHCP has failed.</li>
+                  <li>&check; Flush DNS cache: <code>ipconfig /flushdns</code> before testing domain names.</li>
+                  <li>&check; Test DNS resolver: <code>nslookup google.com 8.8.8.8</code> to isolate ISP provider issues.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive 3-Question Diagnostic Quiz Modal -->
+  <div class="modal-overlay" id="quizModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="kicker-badge">DIAGNOSTIC ADVISOR</span>
+          <h3 class="modal-title">Find Your Exact Field Manual</h3>
+        </div>
+        <button class="modal-close" id="quizClose" aria-label="Close quiz">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-fill" id="quizProgress"></div>
+        </div>
+
+        <!-- Question 1 -->
+        <div class="quiz-step" id="quizStep1">
+          <span class="quiz-step-indicator">Question 1 of 3</span>
+          <h4 class="quiz-question">What best describes your primary day-to-day role?</h4>
+          <div class="quiz-options">
+            <button class="quiz-opt" data-q="1" data-val="business">
+              <span class="quiz-opt-title">Small Business Owner / Manager</span>
+              <span class="quiz-opt-sub">I need to resolve tech issues without waiting for or paying expensive IT retainers.</span>
+            </button>
+            <button class="quiz-opt" data-q="1" data-val="junior-it">
+              <span class="quiz-opt-title">Junior IT Technician / Help Desk</span>
+              <span class="quiz-opt-sub">I want practical field techniques and faster troubleshooting playbooks.</span>
+            </button>
+            <button class="quiz-opt" data-q="1" data-val="office-admin">
+              <span class="quiz-opt-title">Office Administrator</span>
+              <span class="quiz-opt-sub">I handle printer jams, onboarding, software updates, and team computer glitches.</span>
+            </button>
+            <button class="quiz-opt" data-q="1" data-val="security-installer">
+              <span class="quiz-opt-title">Security & Low-Voltage Installer</span>
+              <span class="quiz-opt-sub">I install IP cameras, NVRs, access points, and low-voltage network cabling.</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="quiz-step" id="quizStep2" style="display: none;">
+          <span class="quiz-step-indicator">Question 2 of 3</span>
+          <h4 class="quiz-question">What problem is costing you or your team the most time right now?</h4>
+          <div class="quiz-options">
+            <button class="quiz-opt" data-q="2" data-val="wifi-network">
+              <span class="quiz-opt-title">Intermittent Wi-Fi, dropped internet, or switch configuration</span>
+            </button>
+            <button class="quiz-opt" data-q="2" data-val="printers">
+              <span class="quiz-opt-title">Printer offline errors, spooler hangs, or scanner network issues</span>
+            </button>
+            <button class="quiz-opt" data-q="2" data-val="cameras">
+              <span class="quiz-opt-title">Connecting, configuring, or diagnosing IP surveillance cameras</span>
+            </button>
+            <button class="quiz-opt" data-q="2" data-val="security-backups">
+              <span class="quiz-opt-title">Protecting against ransomware, phishing, and setting up reliable backups</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="quiz-step" id="quizStep3" style="display: none;">
+          <span class="quiz-step-indicator">Question 3 of 3</span>
+          <h4 class="quiz-question">What level of technical depth do you prefer?</h4>
+          <div class="quiz-options">
+            <button class="quiz-opt" data-q="3" data-val="beginner">
+              <span class="quiz-opt-title">Zero Jargon / Step-by-Step Playbooks</span>
+              <span class="quiz-opt-sub">Explain exactly where to click and what commands to copy-paste.</span>
+            </button>
+            <button class="quiz-opt" data-q="3" data-val="hands-on">
+              <span class="quiz-opt-title">Hands-On Technician Reference</span>
+              <span class="quiz-opt-sub">CLI diagnostic commands, subnet math, and field validation tests.</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Quiz Result Screen -->
+        <div class="quiz-result" id="quizResult" style="display: none;">
+          <div class="quiz-result-badge">YOUR RECOMMENDED FIELD MANUAL</div>
+          <div class="quiz-result-card">
+            <img src="assets/images/featured-book.png" alt="Recommended Guide" id="quizRecImg" class="quiz-rec-img">
+            <div class="quiz-rec-info">
+              <h3 id="quizRecTitle">Small Office IT Survival Guide</h3>
+              <p id="quizRecDesc">The definitive field handbook for non-IT operators and small businesses facing everyday workstation and network halts.</p>
+              <div class="quiz-rec-meta">
+                <span class="book-price" id="quizRecPrice">$19</span>
+                <span class="pill-badge pill-practical" id="quizRecBadge">PRACTICAL</span>
+              </div>
+            </div>
+          </div>
+          <div class="quiz-result-actions">
+            <button class="btn btn-primary btn-block" id="quizAddRecBtn">Add Recommended Guide to Cart</button>
+            <button class="btn btn-outline-sm btn-block" id="quizRetakeBtn">Retake Quiz</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Modal -->
+  <div class="modal-overlay" id="searchModal" aria-hidden="true">
+    <div class="modal-dialog modal-search">
+      <div class="search-modal-header">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="7"/>
+          <line x1="16.5" y1="16.5" x2="21" y2="21"/>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Search guides, problems (e.g., Wi-Fi, printer, camera)..." autofocus>
+        <button class="modal-close" id="searchClose">&times;</button>
+      </div>
+      <div class="search-results-box" id="searchResultsBox">
+        <div class="search-prompt">Type any keyword above to search our 7 practical guides and checklists.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Free Resources / Download Modal -->
+  <div class="modal-overlay" id="freeNotesModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="kicker-badge">FREE COMMUNITY FIELD NOTES</span>
+          <h3 class="modal-title">Download Free Reference Sheets</h3>
+        </div>
+        <button class="modal-close" id="freeNotesClose">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>Get immediate access to our 3 most popular quick-reference cheat sheets (PDF format):</p>
+        <div class="free-resource-list">
+          <div class="free-res-item">
+            <div class="free-res-icon">📄</div>
+            <div class="free-res-content">
+              <strong>10 Essential Windows Command Prompt Diagnostic Checks</strong>
+              <small>Ping, traceroute, nslookup, ipconfig, netstat quickcard</small>
+            </div>
+            <button class="btn btn-outline-sm download-res-btn" data-doc="cmd-quickcard">Download PDF</button>
+          </div>
+          <div class="free-res-item">
+            <div class="free-res-icon">📶</div>
+            <div class="free-res-content">
+              <strong>Wi-Fi Dead Zone & Channel Interference Audit Checklist</strong>
+              <small>2.4GHz vs 5GHz channel allocation cheatsheet</small>
+            </div>
+            <button class="btn btn-outline-sm download-res-btn" data-doc="wifi-audit">Download PDF</button>
+          </div>
+          <div class="free-res-item">
+            <div class="free-res-icon">🔒</div>
+            <div class="free-res-content">
+              <strong>Small Business 30-Day Backup Audit Worksheet</strong>
+              <small>Step-by-step verification sheet to guarantee recoverability</small>
+            </div>
+            <button class="btn btn-outline-sm download-res-btn" data-doc="backup-audit">Download PDF</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bundles Modal -->
+  <div class="modal-overlay" id="bundlesModal" aria-hidden="true">
+    <div class="modal-dialog modal-large">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="kicker-badge">FIELD MANUAL BUNDLES</span>
+          <h3 class="modal-title">Complete IT Toolkits & Field Packs</h3>
+        </div>
+        <button class="modal-close" id="bundlesClose">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="bundles-grid">
+          <div class="bundle-card">
+            <div class="bundle-badge">BEST VALUE — 40% OFF</div>
+            <h4>Complete All-in-One Field Pack</h4>
+            <p>Every single Field Manual (#01 through #07), plus future 2026 digital updates, emergency response cheat sheets, and command templates.</p>
+            <div class="bundle-price-wrap">
+              <span class="bundle-old-price">$118</span>
+              <span class="bundle-new-price">$69</span>
+            </div>
+            <button class="btn btn-primary btn-block btn-add-bundle" data-bundle="all">Add Complete Pack to Cart</button>
+          </div>
+          <div class="bundle-card">
+            <div class="bundle-badge">FIELD TECH FAVORITE</div>
+            <h4>Network & Security Specialist Pack</h4>
+            <p>Includes Network Troubleshooting, IP Camera Installation Guide, and Cybersecurity Basics with PoE reference calculators.</p>
+            <div class="bundle-price-wrap">
+              <span class="bundle-old-price">$63</span>
+              <span class="bundle-new-price">$39</span>
+            </div>
+            <button class="btn btn-outline-sm btn-block btn-add-bundle" data-bundle="netsec">Add Pack to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Success Modal -->
+  <div class="modal-overlay" id="checkoutSuccessModal" aria-hidden="true">
+    <div class="modal-dialog modal-success">
+      <div class="success-icon-wrap">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2D6A4F" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="9 12 11 14 15 10"/>
+        </svg>
+      </div>
+      <h3 class="modal-title">Order Confirmed!</h3>
+      <p class="success-desc">Thank you for ordering with Field Manual. Your practical IT guides are ready for immediate download below:</p>
+      <div class="download-links-box" id="purchasedDownloadsList">
+        <!-- populated by script -->
+      </div>
+      <button class="btn btn-primary btn-block" id="successDoneBtn">Back to Site</button>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- App Script -->
+  <script src="script.js"></script>
+</body>
+</html>
